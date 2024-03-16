@@ -9,4 +9,8 @@ export class EnderecoService {
     @InjectRepository(EnderecoEntity)
     private readonly enderecoRepository: Repository<EnderecoEntity>,
   ) {}
+
+  async getAllEndereco(): Promise<EnderecoEntity[]> {
+    return this.enderecoRepository.find();
+  }
 }
